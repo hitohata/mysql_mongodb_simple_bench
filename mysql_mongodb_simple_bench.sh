@@ -72,13 +72,14 @@ do
      
      mysql -u$user -p$password d1 -e "CREATE TABLE IF NOT EXISTS bench (id INT auto_increment primary key, col1 JSON)"
      mysql -u$user -p$password d1 -e "DELETE FROM bench"
+     sleep 5s
      
      systemctl stop mysqld
      sync
      echo 3 > /proc/sys/vm/drop_caches
+     sleep 5s
      systemctl start mysqld
-     
-     sleep 3m
+     sleep 5s
      
      echo "INSERT bench" > /tmp/mysql_bench_result.log
      ( time mysql -u$user -p$password d1 -e "LOAD DATA INFILE '/tmp/sample_data.json' INTO TABLE bench(col1)" ) >> /tmp/mysql_bench_result.log 2>&1
@@ -114,8 +115,8 @@ do
      echo 3 > /proc/sys/vm/drop_caches
      sleep 5s
      systemctl start mongod
-     
      sleep 5s
+     
      echo 'use d1' | mongo
      echo 'db.createCollection(`bench`)' | mongo d1
 
@@ -141,8 +142,7 @@ do
      
      
      * ) 
-     echo "please input again"
-     ;;
+     echo "please input again";;
      
    esac
 done
