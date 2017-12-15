@@ -20,7 +20,8 @@ It is assumed only CentOS and MySQL5.7 !
 
     # ./mysql_mongodb_simple_bench
     
-## 5. create test data -> please input "1" (it mean "yes")
+## 5. create test data -> input "1" (it mean "yes")
 
-## 6. select the target to do benchmark ("1" = MySQL / "2" = MongoDB)
+## 6. select the target to do benchmark -> input "1" or "2" ("1" = MySQL / "2" = MongoDB)
 
+## 7. test result is created under /tmp/
