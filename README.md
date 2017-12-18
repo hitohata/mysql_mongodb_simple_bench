@@ -6,6 +6,8 @@ It is assumed only CentOS and MySQL5.7 !
 
 ## 1. install MongoDB and MySQL5.7 by yum repository
 
+please don't set password for MongoDB.
+
 ## 2. install dummy-json command (ref. https://github.com/webroo/dummy-json)
 
     # curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
@@ -22,6 +24,10 @@ It is assumed only CentOS and MySQL5.7 !
     
 ## 5. create test data -> input "1" (it mean "yes")
 
-## 6. select the target to do benchmark -> input "1" or "2" ("1" = MySQL / "2" = MongoDB)
+test data is created by dummy-json command under /tmp/ directory.
+
+## 6. select the target to do benchmark -> input "1" or "2" 
+
+"1" mean MySQL, "2" mean MongoDB.
 
 ## 7. test result is created under /tmp/
